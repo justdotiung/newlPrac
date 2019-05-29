@@ -110,8 +110,6 @@ public class UserDAO {
 			result= ptmt.executeUpdate();
 			ptmt.close();
 			getConnection().close();
-			return result;
-			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -119,5 +117,16 @@ public class UserDAO {
 		}
 		return result;
 		}
+	
+	 public void delete(String id) throws SQLException {
+		 String sql = "delete notices where seq = ?";
+		 PreparedStatement ptmt = getConnection().prepareStatement(sql);
+		 ptmt.setString(1, id);
+		 ptmt.executeUpdate();
+		 ptmt.close();
+		 getConnection().close();
+		 
+		 
+	 }
 	
 }
