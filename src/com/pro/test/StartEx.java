@@ -14,7 +14,7 @@ public class StartEx extends HttpServlet {
 
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
+		
 		UserDAO dao = new UserDAO();
 		req.setAttribute("list",dao.list());
 //	req.setAttribute("list", "string");
