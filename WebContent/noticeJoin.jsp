@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,9 +26,11 @@
 			<dt>pw확인</dt>
 			<dd>
 				<input type="password" name="pwd2" />
-				<span>${error}</span> 
 			</dd>
 		</dl>
+				<c:forEach var="er" items="error" varStatus="idx">
+					<span></span> 
+				</c:forEach>
 		<dl>
 			<dt>이름</dt>
 			<dd>

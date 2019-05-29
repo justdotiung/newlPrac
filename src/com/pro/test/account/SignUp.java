@@ -10,6 +10,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.pro.test.integerException.IntegerEx;
 @WebServlet("/joinProc")
 public class SignUp extends HttpServlet {
 	@Override
@@ -39,17 +41,22 @@ public class SignUp extends HttpServlet {
 //			req.setAttribute("error", "체크박스를 선택해주세요");
 //			req.getRequestDispatcher("/noticeJoin.jsp").forward(req,resp);
 //		}
-		
+		if(year == null || !IntegerEx.isNumber(year))
+			errors.add("숫자만 입력가능합니다.");
+			
 		if(habit !=null && habit.length >1)
 			for (int i = 0; i < habit.length; i++) {
 				a += habit[i];
 				if(habit.length> i+1)
 					a += ",";
-				
 			}
+		
 		if(!pw.equals(pw2))
-			req.setAttribute("error", "비밀번호가 일치하지않습니다.");
+			errors.add("비밀번호가 일치하지않습니다.");
+		if(errors.size()>0) {
+			req.setAttribute("error", errors);
 		req.getRequestDispatcher("/noticeJoin.jsp").forward(req,resp);
+		}
 	}
 
 }
