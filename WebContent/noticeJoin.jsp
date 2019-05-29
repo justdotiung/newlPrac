@@ -28,8 +28,8 @@
 				<input type="password" name="pwd2" />
 			</dd>
 		</dl>
-				<c:forEach var="er" items="error" varStatus="idx">
-					<span></span> 
+				<c:forEach var="er" items="error">
+					<span>${er}</span> 
 				</c:forEach>
 		<dl>
 			<dt>이름</dt>
