@@ -12,11 +12,12 @@ import pro.UserDAO;
 @WebServlet("/mio")
 public class Detail extends HttpServlet{
 	@Override
-	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		req.setCharacterEncoding("UTF-8");
 		String id = req.getParameter("id");
 		UserDAO user = new UserDAO();
 		req.setAttribute("user", user.getUser(id));
 		req.getRequestDispatcher("/noticeDetail.jsp").forward(req,resp);
 	}
+
 }

@@ -45,10 +45,7 @@ public class SignUp extends HttpServlet {
 		List<String> errors = new ArrayList<>();
 		if (id == null || id.equals(""))
 			errors.add("아이디가 입력되지않았습니다.");
-//		if(habit == null){
-//			req.setAttribute("error", "체크박스를 선택해주세요");
-//			req.getRequestDispatcher("/noticeJoin.jsp").forward(req,resp);
-//		}
+		
 		if (year == null || !IntegerEx.isNumber(year))
 			errors.add("숫자만 입력가능합니다.");
 

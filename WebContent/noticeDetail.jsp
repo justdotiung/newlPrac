@@ -20,5 +20,11 @@
 		<dd>Second explanation</dd>
 	</dl>
 	<div>${user.content}</div>
+	
+	<p>
+		<a href="mo">목록</a>
+		<a href="edit?id=${user.seq}">수정</a>
+		<a href="del?id=${user.seq}">삭제</a>
+
 </body>
 </html>

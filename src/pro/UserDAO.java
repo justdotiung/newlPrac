@@ -95,4 +95,29 @@ public class UserDAO {
 		}
 		return result;
 	}
+	
+	public int update(User user) {
+		int result = 0;
+		String sql = "update notices set title = ? , content = ? where seq = ?";
+		PreparedStatement ptmt;
+		try {
+			ptmt = getConnection().prepareStatement(sql);
+			ptmt.setString(1, user.getTitle());
+			ptmt.setString(2, user.getContent());
+			ptmt.setString(3, user.getSeq());
+			ptmt.executeQuery();
+			
+			result= ptmt.executeUpdate();
+			ptmt.close();
+			getConnection().close();
+			return result;
+			
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+		}
+	
 }
