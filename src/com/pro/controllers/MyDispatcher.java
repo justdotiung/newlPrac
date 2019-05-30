@@ -7,10 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.pro.controllers.customer.UserDetailController;
+
 public class MyDispatcher extends HttpServlet {
 	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		UserDetailController controller = new UserDetailController();
+		controller.excute(req,resp);
 	}
 	
 	@Override
