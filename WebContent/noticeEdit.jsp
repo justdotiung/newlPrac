@@ -25,7 +25,7 @@
 		<p>
 			<input type="hidden" name="id" value="${user.seq}">
 			<input type="submit" value="수정">
-			<a href="del?id=${user.seq}">삭제</a>
+			<a href="mio?id=${user.seq}">취소</a>
 		</p>
 	</form>
 </body>

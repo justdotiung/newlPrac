@@ -1,4 +1,4 @@
-package pro;
+package com.pro.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.pro.entity.User;
 
 public class UserDAO {
 	public Connection getConnection() {
@@ -105,7 +107,6 @@ public class UserDAO {
 			ptmt.setString(1, user.getTitle());
 			ptmt.setString(2, user.getContent());
 			ptmt.setString(3, user.getSeq());
-			ptmt.executeQuery();
 			
 			result= ptmt.executeUpdate();
 			ptmt.close();
@@ -118,15 +119,15 @@ public class UserDAO {
 		return result;
 		}
 	
-	 public void delete(String id) throws SQLException {
+	 public int delete(String id) throws SQLException {
 		 String sql = "delete notices where seq = ?";
 		 PreparedStatement ptmt = getConnection().prepareStatement(sql);
 		 ptmt.setString(1, id);
-		 ptmt.executeUpdate();
+		int result = ptmt.executeUpdate();
 		 ptmt.close();
 		 getConnection().close();
 		 
-		 
+		 return result;
 	 }
 	
 }

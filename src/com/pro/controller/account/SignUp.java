@@ -1,4 +1,4 @@
-package com.pro.test.account;
+package com.pro.controller.account;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -10,10 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.pro.dao.AccountDAO;
+import com.pro.entity.Account;
 import com.pro.test.integerException.IntegerEx;
-
-import pro.Account;
-import pro.AccountDAO;
 
 @WebServlet("/joinProc")
 public class SignUp extends HttpServlet {

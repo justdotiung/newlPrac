@@ -1,4 +1,4 @@
-package com.pro.test;
+package com.pro.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -9,20 +9,25 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import pro.UserDAO;
+import com.pro.dao.UserDAO;
+
 @WebServlet("/del")
-public class Delete extends HttpServlet{
+public class Delete extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String id = req.getParameter("id");
 		UserDAO user = new UserDAO();
+		int result = 0;
 		try {
-			user.delete(id);
+			result = user.delete(id);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		resp.sendRedirect("mo");
+		if (result > 0)
+			resp.sendRedirect("mo");
+		else
+			resp.sendRedirect("error");
 	}
 
 }

@@ -1,4 +1,4 @@
-package com.pro.test;
+package com.pro.controller;
 
 import java.io.IOException;
 
@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import pro.UserDAO;
+import com.pro.dao.UserDAO;
 @WebServlet("/mio")
 public class Detail extends HttpServlet{
 	@Override

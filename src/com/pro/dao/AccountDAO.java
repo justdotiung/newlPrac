@@ -1,4 +1,4 @@
-package pro;
+package com.pro.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.pro.entity.Account;
 
 public class AccountDAO {
 	public Connection getConnection() {

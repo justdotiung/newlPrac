@@ -1,4 +1,4 @@
-package pro;
+package com.pro.entity;
 
 import java.util.Date;
 
