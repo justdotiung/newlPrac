@@ -12,7 +12,7 @@
 	<c:forEach var="li" items="${list}" >
 		<tr>
 			<td>${li.seq}</td>
-			<td><a href="mio?id=${li.seq}">${li.title}</a></td>
+			<td><a href="htm?id=${li.seq}">${li.title}</a></td>
 			<td>${li.writer}</td>
 			<td>${li.regdate}</td>
 			<td>${li.hit}</td>
